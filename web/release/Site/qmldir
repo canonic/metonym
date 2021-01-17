@@ -1,0 +1,5 @@
+ButtonPage ButtonPage.qml
+CheckBoxPage CheckBoxPage.qml
+ColourListPage ColourListPage.qml
+ComboBoxPage ComboBoxPage.qml
+LineEditPage LineEditPage.qml

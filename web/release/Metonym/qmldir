@@ -1,0 +1,30 @@
+module Metonym
+
+singleton Styles 0.1 Styles.qml
+Action 0.1 Action.qml
+Border 0.1 Border.qml
+BorderTheme 0.1 BorderTheme.qml
+BusyIndicator 0.1 BusyIndicator.qml
+Button 0.1 Button.qml
+CanonicDarkTheme 0.1 CanonicDarkTheme.qml
+CheckBox 0.1 CheckBox.qml
+ComboBox 0.1 ComboBox.qml
+ComboBoxTheme 0.1 ComboBoxTheme.qml
+FontGroup 0.1 FontGroup.qml
+FontSources 0.1 FontSources.qml
+Icon 0.1 Icon.qml
+IconSet 0.1 IconSet.qml
+LineEdit 0.1 LineEdit.qml
+Link 0.1 Link.qml
+LinkTheme 0.1 LinkTheme.qml
+Label 0.1 Label.qml
+Menu 0.1 Menu.qml
+MenuBar 0.1 MenuBar.qml
+MenuBarItem 0.1 MenuBarItem.qml
+MenuItem 0.1 MenuItem.qml
+MenuSeparator 0.1 MenuSeparator.qml
+Popup 0.1 Popup.qml
+ScrollBar 0.1 ScrollBar.qml
+Table 0.1 Table.qml
+Theme 0.1 Theme.qml
+ThemedItem 0.1 ThemedItem.qml

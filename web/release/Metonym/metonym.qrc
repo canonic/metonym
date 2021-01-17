@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/Metonym">
+        <file>Action.qml</file>
+        <file>BusyIndicator.qml</file>
+        <file>Button.qml</file>
+        <file>Icon.qml</file>
+        <file>LineEdit.qml</file>
+        <file>Menu.qml</file>
+        <file>MenuBar.qml</file>
+        <file>MenuBarItem.qml</file>
+        <file>MenuItem.qml</file>
+        <file>MenuSeparator.qml</file>
+        <file>Popup.qml</file>
+        <file>qmldir</file>
+        <file>ScrollBar.qml</file>
+        <file>Styles.qml</file>
+        <file>ThemedItem.qml</file>
+        <file>Theme.qml</file>
+        <file>CanonicDarkTheme.qml</file>
+        <file>CheckBox.qml</file>
+        <file>Border.qml</file>
+        <file>BorderTheme.qml</file>
+        <file>FontGroup.qml</file>
+        <file>FontSources.qml</file>
+        <file>Table.qml</file>
+        <file>ComboBox.qml</file>
+        <file>ComboBoxTheme.qml</file>
+        <file>IconSet.qml</file>
+        <file>Label.qml</file>
+        <file>Link.qml</file>
+        <file>LinkTheme.qml</file>
+    </qresource>
+</RCC>
