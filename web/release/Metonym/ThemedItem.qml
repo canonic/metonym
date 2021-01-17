@@ -29,13 +29,13 @@ Item {
 
         // If unable to inherit the theme then try the global window object
         if (typeof window !== 'undefined') {
-            var theme = window.theme
+            var themeSource = window.themeSource
 
-            if(theme !== null)
+            if(themeSource !== null)
             {
                 // If the global window object does not have a theme them we need to create one
-                var canonicDarkThemeComponent = Qt.createComponent("CanonicDarkTheme.qml");
-                return canonicDarkThemeComponent.createObject(__hiddenContainer)
+                var themeComponent = Qt.createComponent(themeSource);
+                return themeComponent.createObject(__hiddenContainer)
             }
 
             return theme
