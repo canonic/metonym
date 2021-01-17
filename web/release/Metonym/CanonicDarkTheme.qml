@@ -80,5 +80,7 @@ Theme {
         tick: "font:," + c_METONYM_ICONS_FONT_SOURCE
         search: "font:," + c_METONYM_ICONS_FONT_SOURCE
         bars: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        splitScreenVertical: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        splitScreenHorizontal: "font:," + c_METONYM_ICONS_FONT_SOURCE
     }
 }

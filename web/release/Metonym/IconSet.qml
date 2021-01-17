@@ -8,6 +8,9 @@ QtObject {
     required property string tick
     required property string search
     required property string bars
+    required property string splitScreenVertical
+    required property string splitScreenHorizontal
+
     // required property string angle_down
     // required property string angle_up
     // required property string caret_down
