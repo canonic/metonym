@@ -98,13 +98,13 @@ QtControls.MenuBarItem {
         id: row
 
         function calculateWidth() {
-            var _iconContainerWidth = 0
+            var __iconWidth = 0
             var _textContainerWidth = 0
             var _indicatorContainerWidth = 0
             var _spacing = -5
 
-            if(__iconContainer.visible){
-                _iconContainerWidth = __iconContainer.width
+            if(__icon.visible){
+                __iconWidth = __icon.width
                 _spacing += 5
             }
 
@@ -118,7 +118,7 @@ QtControls.MenuBarItem {
                 _spacing += 5
             }
 
-            return _iconContainerWidth + _textContainerWidth + _indicatorContainerWidth + _spacing
+            return __iconWidth + _textContainerWidth + _indicatorContainerWidth + _spacing
         }
 
         implicitWidth: calculateWidth()
@@ -140,6 +140,20 @@ QtControls.MenuBarItem {
             verticalCenter: menuBarItem.verticalCenter
         }
 
+        Icon {
+            id: __icon
+            color: __hiddenProperties.color
+            source: menuBarItem.menu.iconSource
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+
+            width:  visible? 20: 0
+            height: visible? 20: __textContainer.height
+
+            visible: Boolean(menuBarItem.menu.iconSource)
+        }
+
+        /*
         Item {
             id: __iconContainer
             width: __iconContainer.visible? __iconImage.width : 0
@@ -190,6 +204,7 @@ QtControls.MenuBarItem {
 
             visible: Boolean(menuBarItem.menu.iconSource)
         }
+        */
 
         Item {
             id: __textContainer
@@ -197,9 +212,9 @@ QtControls.MenuBarItem {
             width: menuBarItemText.contentWidth
 
             anchors {
-                left:  __iconContainer.right
+                left:  __icon.right
                 verticalCenter: parent.verticalCenter
-                leftMargin: __iconContainer.visible? 5 : 0
+                leftMargin: __icon.visible? 5 : 0
                 rightMargin: __menuBarIndicator.visible? 5: 0
             }
 

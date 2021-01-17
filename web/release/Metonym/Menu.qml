@@ -66,26 +66,15 @@ QtControls.Menu {
                 }
             }
 
-            Item {
+            Icon {
                 width: 20
                 height: 20
                 anchors.centerIn: parent
                 visible: menuItem.icon
-
-                Image {
-                    source: menuItem.icon.source
-                    anchors{
-                        fill: parent
-                    }
-
-                    horizontalAlignment : Image.AlignHCenter
-                    verticalAlignment: Image.AlignVCenter
-
-                    fillMode: Image.PreserveAspectFit
-                }
+                horizontalAlignment : Image.AlignHCenter
+                verticalAlignment: Image.AlignVCenter
+                source: menuItem.icon.source
             }
-
-
         }
 
         contentItem: Text {
