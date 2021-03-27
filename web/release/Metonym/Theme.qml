@@ -64,4 +64,5 @@ QtObject {
     required property BorderTheme border
     required property PaneTheme pane
     required property IconSet icons
+    required property PopupTheme popup
 }

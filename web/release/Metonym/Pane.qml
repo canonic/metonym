@@ -8,6 +8,7 @@ QtControls.Pane {
     property double radius: theme.pane.radius
     property color backgroundColor: theme.pane.backgroundColor
     property double elevation: theme.pane.elevation
+    property color shadowColor: theme.pane.shadowColor
 
     property alias theme: _themedItem.theme
 
@@ -87,7 +88,7 @@ QtControls.Pane {
             verticalOffset: root.elevation * 0.1;
             radius: root.elevation;
             samples: 16;
-            color: "#66000000";
+            color: root.shadowColor;
 
             visible: root.elevation !== 0
         }

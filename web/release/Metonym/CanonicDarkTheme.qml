@@ -76,6 +76,14 @@ Theme {
         radius: 3
         backgroundColor: col16
         elevation: 0
+        shadowColor: "#66000000"
+    }
+
+    popup: PopupTheme {
+        radius: 3
+        backgroundColor: col16
+        elevation: 16
+        shadowColor: "#66000000"
     }
 
     icons: IconSet {

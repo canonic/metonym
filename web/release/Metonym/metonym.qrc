@@ -31,5 +31,6 @@
         <file>LinkTheme.qml</file>
         <file>Pane.qml</file>
         <file>PaneTheme.qml</file>
+        <file>PopupTheme.qml</file>
     </qresource>
 </RCC>

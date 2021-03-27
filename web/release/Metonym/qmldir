@@ -26,6 +26,7 @@ MenuSeparator 0.1 MenuSeparator.qml
 Pane 0.1 Pane.qml
 PaneTheme 0.1 PaneTheme.qml
 Popup 0.1 Popup.qml
+PopupTheme 0.1 PopupTheme.qml
 ScrollBar 0.1 ScrollBar.qml
 Table 0.1 Table.qml
 Theme 0.1 Theme.qml
