@@ -30,6 +30,7 @@
         <file>Link.qml</file>
         <file>LinkTheme.qml</file>
         <file>Pane.qml</file>
+        <file>CanonicLightTheme.qml</file>
         <file>PaneTheme.qml</file>
         <file>PopupTheme.qml</file>
     </qresource>
