@@ -3,6 +3,8 @@ import QtQuick 2.15
 Item {
     id: root
 
+    property Item inheritanceParent: parent
+
     Item {
         id: __hiddenContainer
         visible: false
@@ -11,17 +13,14 @@ Item {
     property Theme theme: {
 
         // Inherit the parents theme
-        var parent = root.parent
+        var parent = root.inheritanceParent
 
         while(parent)
         {
-            if(parent instanceof ThemedItem)
+            const parentTheme = parent.theme
+            if (parentTheme && parentTheme instanceof Theme)
             {
-                var parentTheme = parent.theme
-                if(parentTheme)
-                {
-                    return parentTheme
-                }
+                return parentTheme
             }
 
             parent = parent.parent

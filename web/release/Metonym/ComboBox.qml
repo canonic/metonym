@@ -5,7 +5,9 @@ QtControls.ComboBox {
     id: root
 
     property alias theme: __internalThemedItem.theme
+
     ThemedItem {
         id: __internalThemedItem
+        inheritanceParent: root.parent
     }
 }
