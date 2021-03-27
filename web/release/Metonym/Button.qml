@@ -277,6 +277,16 @@ FocusScope{
         }
 
         Rectangle {
+            color: 'pink'
+            anchors {
+                left: __leftStretch.left
+                right: __leftStretch.right
+                top: parent.top
+                bottom: parent.bottom
+            }
+        }
+
+        Rectangle {
             color: 'yellow'
             anchors {
                 left: __buttonLabel.left
@@ -307,6 +317,16 @@ FocusScope{
         }
 
         Rectangle {
+            color: 'purple'
+            anchors {
+                left: __rightStretch.left
+                right: __rightStretch.right
+                top: parent.top
+                bottom: parent.bottom
+            }
+        }
+
+        Rectangle {
             color: 'blue'
             anchors {
                 left: __rightPadding.left
@@ -314,8 +334,7 @@ FocusScope{
                 top: parent.top
                 bottom: parent.bottom
             }
-        }
-        */
+        }*/
 
 
         Item {
@@ -343,7 +362,7 @@ FocusScope{
                 }
             }
             anchors {
-                left: __leftPadding.left
+                left: __leftPadding.right
             }
         }
 
@@ -354,6 +373,8 @@ FocusScope{
             elide: Text.ElideRight
 
             visible: root.label.length
+
+            horizontalAlignment: Text.AlignHCenter
 
             font{
                 family: root.fontFamily
