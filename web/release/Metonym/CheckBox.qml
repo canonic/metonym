@@ -4,8 +4,8 @@ ThemedItem {
     id: root
 
     property bool checked: false
-    property string checkedIcon: root.theme.icons.cross
-    property string uncheckedIcon: root.theme.icons.tick
+    property string checkedIcon: root.theme.icons.tick
+    property string uncheckedIcon: root.theme.icons.cross
 
     width: 26
     height: 26
