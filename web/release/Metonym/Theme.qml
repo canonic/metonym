@@ -61,6 +61,17 @@ QtObject {
         return '#' + r + g + b;
     }
 
+    function setColourAlpha(colour, alpha) {
+
+        if (typeof colour === 'string' || colour instanceof String)
+        {
+            // Convert strings to color types
+            colour = Qt.tint(colour, colour)
+        }
+
+        return Qt.hsla(colour.hslHue, colour.hslSaturation, colour.hslLightness, alpha)
+    }
+
     required property BorderTheme border
     required property PaneTheme pane
     required property IconSet icons
