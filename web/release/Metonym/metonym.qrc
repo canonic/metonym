@@ -29,5 +29,7 @@
         <file>Label.qml</file>
         <file>Link.qml</file>
         <file>LinkTheme.qml</file>
+        <file>Pane.qml</file>
+        <file>PaneTheme.qml</file>
     </qresource>
 </RCC>
