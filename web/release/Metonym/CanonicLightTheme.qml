@@ -76,17 +76,18 @@ Theme {
     }
 
     pane: PaneTheme {
-        radius: 3
+        radius:  _darkTheme.pane.radius
         backgroundColor: col16
-        elevation: 0
-        shadowColor: "#66000000"
+        elevation: _darkTheme.pane.elevation
+        shadowColor: _darkTheme.pane.shadowColor
     }
 
     popup: PopupTheme {
-        radius: 0
+        radius: _darkTheme.popup.radius
         backgroundColor: col19
-        elevation: 16
-        shadowColor: "#66000000"
+        elevation: _darkTheme.popup.elevation
+        shadowColor: _darkTheme.popup.shadowColor
+        defaultYOffset: _darkTheme.popup.defaultYOffset
     }
 
     icons: IconSet {

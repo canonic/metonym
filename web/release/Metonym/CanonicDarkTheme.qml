@@ -80,10 +80,11 @@ Theme {
     }
 
     popup: PopupTheme {
-        radius: 3
+        radius: 0
         backgroundColor: col16
         elevation: 16
         shadowColor: "#66000000"
+        defaultYOffset: 16
     }
 
     icons: IconSet {
