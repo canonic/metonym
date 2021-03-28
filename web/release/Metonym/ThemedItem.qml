@@ -28,16 +28,12 @@ Item {
 
         // If unable to inherit the theme then try the global window object
         if (typeof window !== 'undefined') {
-            var themeSource = window.themeSource
+            const themeComponent = window.themeComponent
 
-            if(themeSource !== null)
+            if(themeComponent !== null && themeComponent.status === Component.Ready)
             {
-                // If the global window object does not have a theme them we need to create one
-                var themeComponent = Qt.createComponent(themeSource);
                 return themeComponent.createObject(__hiddenContainer)
             }
-
-            return theme
         }
 
         throw "No theme set"
