@@ -6,7 +6,15 @@ QtControls.MenuBar {
     id: root
     property bool roundCorners: true
 
+    property alias theme: __internalThemedItem.theme
+
+    ThemedItem {
+        id: __internalThemedItem
+        inheritanceParent: root.parent
+    }
+
     delegate: MenuBarItem {
+        theme: root.theme
         radius: roundCorners? 2: 0
     }
 
