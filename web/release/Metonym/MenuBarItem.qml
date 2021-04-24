@@ -250,7 +250,7 @@ QtControls.MenuBarItem {
             id: __menuBarIndicator
 
             width: 10
-            height: 2
+            height: __iconImagePlusBorder2.height
 
             anchors {
                 right: parent.right
@@ -263,13 +263,14 @@ QtControls.MenuBarItem {
                 width: 10
                 height: 16
 
-                color: 'red'
+                color: __hiddenProperties.color
 
                 anchors {
                     verticalCenter: parent.verticalCenter
                 }
 
                 source: menuBarItem.menu.opened? root.theme.icons.angleUp : root.theme.icons.angleDown
+
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
             }

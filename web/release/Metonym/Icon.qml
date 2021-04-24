@@ -80,10 +80,12 @@ Item {
             minimumPointSize: 10
             fontSizeMode: Text.Fit
 
-
             font{
                 family: _fontLoader.name
             }
+
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
 
 
             text: {
