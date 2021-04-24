@@ -34,7 +34,7 @@ QtControls.BusyIndicator {
             Icon {
                 id: _icon
                 anchors.fill: parent
-                source: 'qrc:/assets/icons/spinner-20px.svg'
+                source: 'qrc:/assets/images/spinner-256px.png'
                 color: root.color
             }
         }
