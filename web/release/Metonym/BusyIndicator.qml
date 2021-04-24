@@ -6,6 +6,13 @@ QtControls.BusyIndicator {
 
     property color color: Styles.brandColorHover
 
+    property alias theme: __internalThemedItem.theme
+
+    ThemedItem {
+        id: __internalThemedItem
+        inheritanceParent: root.parent
+    }
+
     contentItem: Item {
         implicitWidth: 64
         implicitHeight: 64

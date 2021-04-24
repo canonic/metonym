@@ -61,10 +61,10 @@ Metonym.ThemedItem {
 
     }
 
-    Rectangle {
+    Metonym.Pane {
         id: componentsList
 
-        color: 'white'
+        elevation: 10
 
         width: 300
 
@@ -76,14 +76,10 @@ Metonym.ThemedItem {
         Repeater {
             model: root.components.length
 
-            delegate: Rectangle {
-                Text {
-                    text: root.components[index].id
-                    y: index * 40
-                    TapHandler {
-                        onTapped: componentContainer.source = root.components[index].source
-                    }
-                }
+            delegate: Metonym.Button {
+                label: root.components[index].id
+                y: index * 40
+                onClicked: componentContainer.source = root.components[index].source
             }
         }
 

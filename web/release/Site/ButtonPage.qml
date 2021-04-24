@@ -50,42 +50,42 @@ Metonym.ThemedItem {
 
         Metonym.Button {
             label: 'Example'
-            icon: root.theme.icons.tick
+            icon.source: root.theme.icons.tick
             bordered: true
         }
 
         Metonym.Button {
             label: 'Example'
-            icon: root.theme.icons.tick
+            icon.source: root.theme.icons.tick
             bordered: false
         }
 
         Metonym.Button {
-            icon: root.theme.icons.tick
+            icon.source: root.theme.icons.tick
             bordered: true
         }
 
         Metonym.Button {
-            icon: root.theme.icons.tick
+            icon.source: root.theme.icons.tick
             bordered: false
         }
 
         Metonym.Button {
-            icon: root.theme.icons.tick
+            icon.source: root.theme.icons.tick
             width: 36
             height: 36
             bordered: true
         }
 
         Metonym.Button {
-            icon: root.theme.icons.tick
+            icon.source: root.theme.icons.tick
             width: 36
             height: 36
             bordered: false
         }
 
         Metonym.Button {
-            icon: root.theme.icons.tick
+            icon.source: root.theme.icons.tick
             width: 36
             height: 36
             radius: width / 2
@@ -93,11 +93,18 @@ Metonym.ThemedItem {
         }
 
         Metonym.Button {
-            icon: root.theme.icons.tick
+            icon.source: root.theme.icons.tick
             width: 36
             height: 36
             radius: width / 2
             bordered: false
+        }
+
+        Metonym.Button {
+            label: 'Example'
+            icon.source: root.theme.icons.tick
+            bordered: false
+            borderIcon: true
         }
 
 

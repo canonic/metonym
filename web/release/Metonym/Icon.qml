@@ -10,6 +10,7 @@ Item {
     property alias verticalAlignment: __icon.verticalAlignment
 
     readonly property bool isVector: root.source.toString().toLowerCase().endsWith('.svg')
+
     readonly property bool isFont: root.source.startsWith("font:")
     readonly property bool isRaster: !isVector && !isFont
 
@@ -97,7 +98,7 @@ Item {
             }
         }
 
-        visible: false
+        visible: !root.isFont && Qt.colorEqual(root.color, 'transparent')
     }
 
     Rectangle {
@@ -114,7 +115,7 @@ Item {
         source: __fill
         maskSource: __icon
 
-        visible: true
+        visible: !(!root.isFont && Qt.colorEqual(root.color, 'transparent'))
     }
 }
 

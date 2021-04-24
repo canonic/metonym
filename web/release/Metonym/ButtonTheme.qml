@@ -8,4 +8,8 @@ QtObject {
     required property color defaultFocusedColor
     required property color hoverFocusedColor
     required property color pressedFocusedColor
+
+    required property color backgroundColor
+    required property color backgroundHoveredColor
+    required property color backgroundPressedColor
 }

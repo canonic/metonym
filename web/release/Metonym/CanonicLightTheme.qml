@@ -40,7 +40,7 @@ Theme {
     col9: _darkTheme.col10
     col10: _darkTheme.col9
     col11: _darkTheme.col8
-    col12:  _darkTheme.col7
+    col12: _darkTheme.col7
     col13: _darkTheme.col6
     col14: _darkTheme.col5
     col15: _darkTheme.col4
@@ -73,6 +73,20 @@ Theme {
         borderColorFocused: colorFocused
         borderColorFocusedHovered: colorFocusedHovered
         borderColorFocusedMouseDown: brandSelected
+    }
+
+    button: ButtonTheme {
+        defaultColor: col3
+        hoverColor: col0
+        pressedColor: getInterpolatedColour(11.5)
+
+        defaultFocusedColor: '#15E888'
+        hoverFocusedColor: col20
+        pressedFocusedColor: '#10804E'
+
+        backgroundColor: getInterpolatedColour(16.4)
+        backgroundHoveredColor: getInterpolatedColour(14.8)
+        backgroundPressedColor: getInterpolatedColour(16.9)
     }
 
     pane: PaneTheme {

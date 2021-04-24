@@ -73,6 +73,8 @@ QtObject {
     }
 
     required property BorderTheme border
+    required property ButtonTheme button
+    required property LinkTheme link
     required property PaneTheme pane
     required property IconSet icons
     required property PopupTheme popup

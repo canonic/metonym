@@ -30,9 +30,13 @@ Item {
         if (typeof window !== 'undefined') {
             const themeComponent = window.themeComponent
 
-            if(themeComponent !== null && themeComponent.status === Component.Ready)
+            if(themeComponent !== null && themeComponent.status === Component.Ready )
             {
-                return themeComponent.createObject(__hiddenContainer)
+                const themeObject = themeComponent.createObject(__hiddenContainer)
+                if (themeObject instanceof Theme)
+                {
+                    return themeObject
+                }
             }
         }
 

@@ -6,6 +6,7 @@ Border 0.1 Border.qml
 BorderTheme 0.1 BorderTheme.qml
 BusyIndicator 0.1 BusyIndicator.qml
 Button 0.1 Button.qml
+ButtonTheme 0.1 ButtonTheme.qml
 CanonicDarkTheme 0.1 CanonicDarkTheme.qml
 CanonicLightTheme 0.1 CanonicLightTheme.qml
 CheckBox 0.1 CheckBox.qml

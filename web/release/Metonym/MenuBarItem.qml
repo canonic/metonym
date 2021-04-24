@@ -5,6 +5,13 @@ import QtGraphicalEffects 1.15
 QtControls.MenuBarItem {
     id: menuBarItem
 
+    property alias theme: __internalThemedItem.theme
+
+    ThemedItem {
+        id: __internalThemedItem
+        inheritanceParent: root.parent
+    }
+
     property real radius: 0
 
     verticalPadding: 2
@@ -250,61 +257,21 @@ QtControls.MenuBarItem {
                 verticalCenter: parent.verticalCenter
             }
 
-            Rectangle {
-                id: __fillColor2
-                color: __hiddenProperties.color
-                anchors.fill: __iconImagePlusBorder2
-                visible: false
-            }
-
-            Rectangle {
+            Icon {
                 id: __iconImagePlusBorder2
 
                 width: 10
                 height: 16
 
-                color: 'transparent'
-
-                radius: menuBarItem.radius
+                color: 'red'
 
                 anchors {
                     verticalCenter: parent.verticalCenter
                 }
 
-                layer{
-                    enabled: true
-                    samples: 32
-                }
-
-                Image {
-                    id: __iconImage2
-
-                    anchors{
-                        fill: parent
-                    }
-
-                    mipmap: true
-                    smooth: true
-
-                    source: menuBarItem.menu.opened? 'qrc:/assets/icons/angle-up.svg' : 'qrc:/assets/icons/angle-down.svg'
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                }
-
-                visible: false
-            }
-
-            OpacityMask {
-                id: __opacityMask2
-
-                width: __iconImagePlusBorder2.width
-                height: __iconImagePlusBorder2.height
-
-                anchors {
-                    verticalCenter: parent.verticalCenter
-                }
-                source: __fillColor2
-                maskSource: __iconImagePlusBorder2
+                source: menuBarItem.menu.opened? root.theme.icons.angleUp : root.theme.icons.angleDown
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
             }
 
             visible: Boolean(menuBarItem.menu) && menuBarItem.menu.count && menuBarItem.menu.showIndicator

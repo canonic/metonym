@@ -5,6 +5,13 @@ import QtGraphicalEffects 1.15
 FocusScope{
     id: root
 
+    property alias theme: __internalThemedItem.theme
+
+    ThemedItem {
+        id: __internalThemedItem
+        inheritanceParent: root.parent
+    }
+
     /*
     enum size {
         Minimal
@@ -14,7 +21,9 @@ FocusScope{
     */
 
     property string label: ''
-    property string icon: ''
+    property Icon icon: Icon {
+        color: isRaster? 'transparent' : __hiddenProperties.color
+    }
 
     property bool bordered: false
     property bool borderIcon: false
@@ -23,6 +32,7 @@ FocusScope{
     property bool isPrimaryBtn: false
     property bool showBackground: bordered? true: false
     signal clicked(QtObject mouse)
+    signal pressAndHold(QtObject mouse)
     readonly property bool hovered: __mouseArea.containsMouse
 
     // font properties
@@ -34,14 +44,18 @@ FocusScope{
     property int horizontalAlignment: Text.AlignHCenter
 
     // Unfocused
-    property color defaultColor: isPrimaryBtn? Styles.buttonColorFocusedDefault : Styles.buttonColorDefault
-    property color hoverColor: isPrimaryBtn? Styles.buttonColorFocusedHover : Styles.buttonColorHover
-    property color mouseDownColor: isPrimaryBtn? Styles.buttonColorFocusedDown : Styles.buttonColorDown
+    property color defaultColor: isPrimaryBtn? root.theme.button.defaultFocusedColor : root.theme.button.defaultColor
+    property color hoverColor: isPrimaryBtn? root.theme.button.hoverFocusedColor : root.theme.button.hoverColor
+    property color mouseDownColor: isPrimaryBtn? root.theme.button.pressedFocusedColor : root.theme.button.pressedFocusedColor
 
     // Focused
-    property color defaultFocusedColor: Styles.buttonColorFocusedDefault
-    property color hoverFocusedColor: Styles.buttonColorFocusedHover
-    property color mouseDownFocusedColor: Styles.buttonColorFocusedDown
+    property color defaultFocusedColor: root.theme.button.defaultFocusedColor
+    property color hoverFocusedColor: root.theme.button.hoverFocusedColor
+    property color mouseDownFocusedColor: root.theme.button.pressedFocusedColor
+
+    property color backgroundColor: root.theme.button.backgroundColor
+    property color backgroundHoveredColor: root.theme.button.backgroundHoveredColor
+    property color backgroundPressedColor: root.theme.button.backgroundPressedColor
 
     opacity: enabled? 1: 0.6
     implicitWidth: Math.max(24, __content.contentWidth)
@@ -131,15 +145,15 @@ FocusScope{
         property color backgroundColor:  {
             if(__mouseArea.containsPress)
             {
-                return Styles.buttonBackgroundPressed
+                return root.backgroundPressedColor
             }
 
             if(__mouseArea.containsMouse)
             {
-                return Styles.buttonBackgroundHovered
+                return root.backgroundHoveredColor
             }
 
-            return Styles.buttonBackgroundDefault
+            return root.backgroundColor
         }
 
         Behavior on backgroundColor {
@@ -250,7 +264,7 @@ FocusScope{
             }
         }
 
-        property real spacing: (root.label.length && root.icon.length) ? 5 : 0
+        property real spacing: (root.label.length && root.icon.source.length) ? 5 : 0
         property real contentHeight: Math.max(__buttonLabel.height, __iconCointainer.height) + (verticalPadding*2)
         property real contentWidth: __buttonLabelNoElide.contentWidth + __iconCointainer.width + spacing + (horizontalPadding*2)
         property real stretch: {
@@ -419,15 +433,15 @@ FocusScope{
         Item{
             id: __iconCointainer
 
-            width: root.icon.length? 24 : 0
-            height: root.icon.length? 24 : 0
+            width: root.icon.source.length? 28 : 0
+            height: root.icon.source.length? 28 : 0
 
             anchors {
                 right: __rightStretch.left
                 verticalCenter: parent.verticalCenter
             }
 
-            visible: root.icon.length
+            visible: root.icon.source.length
 
             Rectangle{
                 id: __iconImagePlusBorder
@@ -439,6 +453,7 @@ FocusScope{
 
                 radius: root.radius
                 border {
+                    color:  __iconImagePlusBorder.visible? __hiddenProperties.color : 'transparent'
                     width: root.borderIcon? 1 : 0
                 }
 
@@ -454,22 +469,12 @@ FocusScope{
                         margins: 2
                     }
 
-                    source: root.icon
+                    color: root.icon.color
+                    source: root.icon.source
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
-
-                visible: false
             }
-
-            OpacityMask {
-                id: __opacityMask
-                anchors.fill: parent
-                source: __fillColor
-                maskSource: __iconImagePlusBorder
-                visible: true
-            }
-
         }
 
         Item {
@@ -502,115 +507,6 @@ FocusScope{
         }
     }
 
-    /*
-    Row {
-        id: row
-        spacing: 5
-
-        property int verticalPadding: {
-            if(root.bordered)
-            {
-                return 2
-            }
-            else{
-                return root.showBackground? 3: 0
-            }
-        }
-
-        property int horizontalPadding: {
-            if(root.bordered)
-            {
-                if(root.label.length)
-                {
-                    return 10
-                }
-                else{
-                    return 2
-                }
-            }
-            else{
-                return root.showBackground? 3: 0
-            }
-        }
-
-        topPadding: row.verticalPadding
-        bottomPadding: row.verticalPadding
-        leftPadding: row.horizontalPadding
-        rightPadding:  row.horizontalPadding
-
-        anchors {
-            centerIn: parent
-        }
-
-        Text{
-            id: __buttonLabel
-            text: root.label
-            color: __hiddenProperties.color
-            elide: Text.ElideRight
-
-            font{
-                family: root.fontFamily
-                bold: root.bold
-                capitalization: root.capitalization
-                pointSize: root.pointSize
-                underline: root.isPrimaryBtn && !root.showBackground && root.activeFocus
-            }
-
-            anchors.verticalCenter: parent.verticalCenter
-        }
-
-        Item{
-            id: __iconCointainer
-
-            width: 24
-            height: 24
-            visible: root.icon.length
-
-            Rectangle{
-                id: __iconImagePlusBorder
-                anchors{
-                    fill: parent
-                    margins: 2
-                }
-                color: 'transparent'
-
-                radius: root.radius
-                border {
-                    width: root.borderIcon? 1 : 0
-                }
-
-                layer{
-                    enabled: true
-                    samples: 32
-                }
-
-                Icon{
-                    id: __iconImage
-                    anchors{
-                        fill: parent
-                        margins: 2
-                    }
-
-                    source: root.icon
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                }
-
-                visible: false
-            }
-
-            OpacityMask {
-                id: __opacityMask
-                anchors.fill: parent
-                source: __fillColor
-                maskSource: __iconImagePlusBorder
-                visible: true
-            }
-
-        }
-    }
-    */
-
     MouseArea{
         id: __mouseArea
         anchors.fill: parent
@@ -623,19 +519,9 @@ FocusScope{
             root.forceActiveFocus()
             root.clicked(mouse)
         }
-    }
 
-    /*
-    Rectangle {
-        anchors.fill: row
-        color: 'transparent'
-        border {
-            width: 1
-            color: 'cyan'
+        onPressAndHold: {
+            root.pressAndHold(mouse)
         }
     }
-    */
-
-
-
 }

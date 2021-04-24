@@ -72,6 +72,30 @@ Theme {
         borderColorFocusedMouseDown: brandSelected
     }
 
+    button: ButtonTheme {
+        defaultColor: col3
+        hoverColor: col0
+        pressedColor: getInterpolatedColour(11.5)
+
+        defaultFocusedColor: '#15E888'
+        hoverFocusedColor: col20
+        pressedFocusedColor: '#10804E'
+
+        backgroundColor: getInterpolatedColour(16.4)
+        backgroundHoveredColor: getInterpolatedColour(14.8)
+        backgroundPressedColor: getInterpolatedColour(16.9)
+    }
+
+    link: LinkTheme {
+        defaultColor: col22
+        hoverColor: '#4FA6FC'
+        pressedColor: '#217EDB'
+
+        defaultFocusedColor: defaultColor
+        hoverFocusedColor: hoverColor
+        pressedFocusedColor: pressedColor
+    }
+
     pane: PaneTheme {
         radius: 3
         backgroundColor: col16
