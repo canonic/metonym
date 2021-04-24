@@ -2,7 +2,5 @@
 <!-- Generator: Adobe Illustrator 22.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
-<path d="M10.6373,6.3896l5.0984,5.0984c0.3524,0.3524,0.3524,0.9222,0,1.2709l-0.8472,0.8472c-0.3524,0.3524-0.9222,0.3524-1.2709,0
-	L10,9.996l-3.6139,3.6139c-0.3524,0.3524-0.9222,0.3524-1.2709,0l-0.851-0.8472c-0.3524-0.3524-0.3524-0.9222,0-1.2709
-	l5.0984-5.0984C9.7151,6.0373,10.2849,6.0373,10.6373,6.3896L10.6373,6.3896z"/>
+<circle cx="10" cy="10" r="4"/>
 </svg>

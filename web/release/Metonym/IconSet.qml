@@ -10,9 +10,15 @@ QtObject {
     required property string bars
     required property string splitScreenVertical
     required property string splitScreenHorizontal
+    required property string angleUp
+    required property string angleDown
+    required property string home
+    required property string empty
+    required property string circle
+    required property string githubMark
+    required property string qt
+    required property string discord
 
-    // required property string angle_down
-    // required property string angle_up
     // required property string caret_down
     // required property string caret_up
     // required property string caret_up

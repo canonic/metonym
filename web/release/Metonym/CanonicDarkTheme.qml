@@ -97,5 +97,13 @@ Theme {
         bars: "font:," + c_METONYM_ICONS_FONT_SOURCE
         splitScreenVertical: "font:," + c_METONYM_ICONS_FONT_SOURCE
         splitScreenHorizontal: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        angleUp: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        angleDown: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        home: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        empty: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        circle: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        githubMark: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        qt: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        discord: "font:," + c_METONYM_ICONS_FONT_SOURCE
     }
 }

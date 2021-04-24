@@ -90,15 +90,5 @@ Theme {
         defaultYOffset: _darkTheme.popup.defaultYOffset
     }
 
-    icons: IconSet {
-        reload: "font:," + c_METONYM_ICONS_FONT_SOURCE
-        arrow_left: "font:," + c_METONYM_ICONS_FONT_SOURCE
-        arrow_right: "font:," + c_METONYM_ICONS_FONT_SOURCE
-        cross: "font:," + c_METONYM_ICONS_FONT_SOURCE
-        tick: "font:," + c_METONYM_ICONS_FONT_SOURCE
-        search: "font:," + c_METONYM_ICONS_FONT_SOURCE
-        bars: "font:," + c_METONYM_ICONS_FONT_SOURCE
-        splitScreenVertical: "font:," + c_METONYM_ICONS_FONT_SOURCE
-        splitScreenHorizontal: "font:," + c_METONYM_ICONS_FONT_SOURCE
-    }
+    icons: _darkTheme.icons
 }
