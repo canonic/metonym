@@ -161,7 +161,7 @@ QtObject {
 
     readonly property color buttonBorderDefaultColor: addressBarBorderDefualtColor
     readonly property color buttonBorderHoveredColor: addressBarBorderHoveredColor
-    readonly property color buttonBorderMouseDownColor: 'pink'
+    readonly property color buttonBorderMouseDownColor: addressBarBorderHoveredColor
 
     // MenuBar Item
     readonly property color menuBarItemColorDefault: buttonColorDefault
