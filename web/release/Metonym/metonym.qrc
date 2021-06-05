@@ -21,7 +21,6 @@
         <file>Border.qml</file>
         <file>BorderTheme.qml</file>
         <file>FontGroup.qml</file>
-        <file>FontSources.qml</file>
         <file>Table.qml</file>
         <file>ComboBox.qml</file>
         <file>ComboBoxTheme.qml</file>
@@ -33,5 +32,6 @@
         <file>CanonicLightTheme.qml</file>
         <file>PaneTheme.qml</file>
         <file>PopupTheme.qml</file>
+        <file>FontSource.qml</file>
     </qresource>
 </RCC>

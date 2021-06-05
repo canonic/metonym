@@ -7,26 +7,9 @@ Theme {
 
     readonly property CanonicDarkTheme _darkTheme: CanonicDarkTheme {}
 
-    font1: FontGroup {
-        sources: FontSources {
-            thin: "./fonts/Montserrat-Thin.ttf"
-            light: "./fonts/Montserrat-Light.ttf"
-            regular: "./fonts/Montserrat-Regular.ttf"
-            medium: "./fonts/Montserrat-Medium.ttf"
-            semiBold: "./fonts/Montserrat-SemiBold.ttf"
-            bold: "./fonts/Montserrat-Bold.ttf"
-            extraBold: "./fonts/Montserrat-ExtraBold.ttf"
-            black: "./fonts/Montserrat-Black.ttf"
-            lightItalic: "./fonts/Montserrat-LightItalic.ttf"
-        }
-    }
-
-    font2: FontGroup {
-        sources: FontSources {
-            light: "./fonts/Garnet-Capitals-Light.ttf"
-            regular: "./fonts/Garnet-Capitals-Bold.ttf"
-        }
-    }
+    font1: _darkTheme.font1
+    font2: _darkTheme.font2
+    font3: _darkTheme.font3
 
     col0: '#000000'
     col1: _darkTheme.col18

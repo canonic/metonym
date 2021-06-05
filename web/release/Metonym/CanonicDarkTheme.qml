@@ -1,30 +1,248 @@
-import QtQuick 2.15
+import QtQuick 2.15 as QtQuick
 
 Theme {
+    id: root
 
     // Constants
     readonly property string c_METONYM_ICONS_FONT_SOURCE: "./fonts/metonym-icons.ttf"
 
     font1: FontGroup {
-        sources: FontSources {
-            thin: "./fonts/Montserrat-Thin.ttf"
-            light: "./fonts/Montserrat-Light.ttf"
-            regular: "./fonts/Montserrat-Regular.ttf"
-            medium: "./fonts/Montserrat-Medium.ttf"
-            semiBold: "./fonts/Montserrat-SemiBold.ttf"
-            bold: "./fonts/Montserrat-Bold.ttf"
-            extraBold: "./fonts/Montserrat-ExtraBold.ttf"
-            black: "./fonts/Montserrat-Black.ttf"
-            lightItalic: "./fonts/Montserrat-LightItalic.ttf"
-        }
+        fontSources: [
+            FontSource {
+                source: './fonts/Montserrat-Thin.ttf'
+                preferedWeight: Font.Weight.Thin
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/Montserrat-Light.ttf'
+                preferedWeight: Font.Weight.Light
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/Montserrat-LightItalic.ttf'
+                preferedWeight: Font.Weight.Light
+                supportsItalic: true
+                supportsNonItalic: false
+                requiresItalic: true
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/Montserrat-Regular.ttf'
+                preferedWeight: Font.Weight.Regular
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/Montserrat-Medium.ttf'
+                preferedWeight: Font.Weight.Medium
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/Montserrat-SemiBold.ttf'
+                preferedWeight: Font.Weight.SemiBold
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/Montserrat-Bold.ttf'
+                preferedWeight: Font.Weight.Bold
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: true
+            },
+
+            FontSource {
+                source: './fonts/Montserrat-ExtraBold.ttf'
+                preferedWeight: Font.Weight.ExtraBold
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/Montserrat-Black.ttf'
+                preferedWeight: Font.Weight.Black
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: false
+            }
+        ]
     }
 
     font2: FontGroup {
-        sources: FontSources {
-            light: "./fonts/Garnet-Capitals-Light.ttf"
-            regular: "./fonts/Garnet-Capitals-Bold.ttf"
-        }
+        fontSources: [
+            FontSource {
+                source: './fonts/Garnet-Capitals-Light.ttf'
+                preferedWeight: Font.Weight.Light
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/Garnet-Capitals-Bold.ttf'
+                preferedWeight: Font.Weight.Bold
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: true
+            }
+        ]
     }
+
+    font3: FontGroup {
+        fontSources: [
+            FontSource {
+                source: './fonts/SourceCodePro-ExtraLight.ttf'
+                preferedWeight: Font.Weight.Light
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/SourceCodePro-ExtraLightIt.ttf'
+                preferedWeight: Font.Weight.Light
+                supportsItalic: true
+                supportsNonItalic: false
+                requiresItalic: true
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/SourceCodePro-Light.ttf'
+                preferedWeight: Font.Weight.Light
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/SourceCodePro-LightIt.ttf'
+                preferedWeight: Font.Weight.Light
+                supportsItalic: true
+                supportsNonItalic: false
+                requiresItalic: true
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/SourceCodePro-Regular.ttf'
+                preferedWeight: Font.Weight.Regular
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/SourceCodePro-It.ttf'
+                preferedWeight: Font.Weight.Regular
+                supportsItalic: true
+                supportsNonItalic: false
+                requiresItalic: true
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/SourceCodePro-Medium.ttf'
+                preferedWeight: Font.Weight.Medium
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/SourceCodePro-MediumIt.ttf'
+                preferedWeight: Font.Weight.Medium
+                supportsItalic: true
+                supportsNonItalic: false
+                requiresItalic: true
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/SourceCodePro-Semibold.ttf'
+                preferedWeight: Font.Weight.SemiBold
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/SourceCodePro-SemiboldIt.ttf'
+                preferedWeight: Font.Weight.SemiBold
+                supportsItalic: true
+                supportsNonItalic: false
+                requiresItalic: true
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/SourceCodePro-Bold.ttf'
+                preferedWeight: Font.Weight.Bold
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: true
+            },
+
+            FontSource {
+                source: './fonts/SourceCodePro-BoldIt.ttf'
+                preferedWeight: Font.Weight.Bold
+                supportsItalic: true
+                supportsNonItalic: false
+                requiresItalic: true
+                requiresBold: true
+            },
+
+            FontSource {
+                source: './fonts/SourceCodePro-Black.ttf'
+                preferedWeight: Font.Weight.Black
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: false
+            },
+
+            FontSource {
+                source: './fonts/SourceCodePro-BlackIt.ttf'
+                preferedWeight: Font.Weight.Black
+                supportsItalic: true
+                supportsNonItalic: false
+                requiresItalic: true
+                requiresBold: false
+            }
+        ]
+    }
+
 
     col0: '#FFFFFF'
     col1: '#F6F6F6'
@@ -84,6 +302,10 @@ Theme {
         backgroundColor: getInterpolatedColour(16.4)
         backgroundHoveredColor: getInterpolatedColour(14.8)
         backgroundPressedColor: getInterpolatedColour(16.9)
+    }
+
+    label: LabelTheme {
+        fontGroup: root.font1
     }
 
     link: LinkTheme {

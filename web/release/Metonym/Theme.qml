@@ -3,6 +3,7 @@ import QtQuick 2.0
 QtObject {
     required property FontGroup font1
     required property FontGroup font2
+    required property FontGroup font3
 
     required property color col0
     required property color col1
@@ -74,6 +75,7 @@ QtObject {
 
     required property BorderTheme border
     required property ButtonTheme button
+    required property LabelTheme label
     required property LinkTheme link
     required property PaneTheme pane
     required property IconSet icons
