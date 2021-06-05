@@ -72,9 +72,13 @@ Theme {
         backgroundPressedColor: getInterpolatedColour(16.9)
     }
 
+    label: _darkTheme.label
+
+    link: _darkTheme.link
+
     pane: PaneTheme {
         radius:  _darkTheme.pane.radius
-        backgroundColor: col16
+        backgroundColor: col18
         elevation: _darkTheme.pane.elevation
         shadowColor: _darkTheme.pane.shadowColor
     }

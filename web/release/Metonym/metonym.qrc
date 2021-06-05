@@ -33,5 +33,6 @@
         <file>PaneTheme.qml</file>
         <file>PopupTheme.qml</file>
         <file>FontSource.qml</file>
+        <file>TextArea.qml</file>
     </qresource>
 </RCC>
