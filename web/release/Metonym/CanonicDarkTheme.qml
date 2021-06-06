@@ -351,5 +351,8 @@ Theme {
         githubMark: "font:," + c_METONYM_ICONS_FONT_SOURCE
         qt: "font:," + c_METONYM_ICONS_FONT_SOURCE
         discord: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        day: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        night: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        user: "font:," + c_METONYM_ICONS_FONT_SOURCE
     }
 }

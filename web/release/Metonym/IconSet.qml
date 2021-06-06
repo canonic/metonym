@@ -18,6 +18,9 @@ QtObject {
     required property string githubMark
     required property string qt
     required property string discord
+    required property string day
+    required property string night
+    required property string user
 
     // required property string caret_down
     // required property string caret_up
