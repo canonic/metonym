@@ -98,6 +98,15 @@ Metonym.ThemedItem {
             height: 36
             radius: width / 2
             bordered: false
+            showBackground: true
+        }
+
+        Metonym.Button {
+            icon.source: root.theme.icons.tick
+            width: 36
+            height: 36
+            radius: width / 2
+            bordered: false
         }
 
         Metonym.Button {

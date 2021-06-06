@@ -67,8 +67,8 @@ Theme {
         hoverFocusedColor: col20
         pressedFocusedColor: '#10804E'
 
-        backgroundColor: getInterpolatedColour(16.4)
-        backgroundHoveredColor: getInterpolatedColour(14.8)
+        backgroundColor: pane.backgroundColor
+        backgroundHoveredColor: getInterpolatedColour(14.3)
         backgroundPressedColor: getInterpolatedColour(16.9)
     }
 

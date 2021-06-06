@@ -38,4 +38,5 @@ Theme 0.1 Theme.qml
 ThemedItem 0.1 ThemedItem.qml
 
 # JS files
+Constants 0.1 Constants.js
 Font 0.1 Font.js

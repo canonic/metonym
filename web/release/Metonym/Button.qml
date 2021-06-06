@@ -24,6 +24,7 @@ FocusScope{
     property Icon icon: Icon {
         color: isRaster? 'transparent' : __hiddenProperties.color
     }
+    property bool circularButtonIcon: false
 
     property bool bordered: false
     property bool borderIcon: false
@@ -104,7 +105,7 @@ FocusScope{
         }
 
         property color borderColor: {
-            if(root.activeFocus)
+            if(root.containsFocus)
             {
                 if(__mouseArea.containsPress)
                 {
@@ -218,7 +219,7 @@ FocusScope{
         Rectangle {
             id: buttonBorder
             radius: root.radius
-            color: Styles.backgroundColor3
+            color: root.showBackground? __hiddenProperties.backgroundColor: 'transparent'
             anchors.fill: parent
 
             // the ammount the border should overlap with the image
@@ -260,7 +261,7 @@ FocusScope{
                 }
             }
             else{
-                return root.showBackground? 3: 0
+                return root.showBackground && !circularButtonIcon? 3: 0
             }
         }
 
@@ -430,7 +431,7 @@ FocusScope{
             }
         }
 
-        Item{
+        Item {
             id: __iconCointainer
 
             width: root.icon.source.length? 28 : 0
@@ -443,11 +444,18 @@ FocusScope{
 
             visible: root.icon.source.length
 
-            Rectangle{
+            Rectangle {
                 id: __iconImagePlusBorder
                 anchors{
                     fill: parent
-                    margins: 2
+                    margins: root.circularButtonIcon? 0 : 2
+
+                    Behavior on margins {
+                        NumberAnimation {
+                            duration: 140
+                            easing.type: Easing.InOutSine
+                        }
+                    }
                 }
                 color: 'transparent'
 
@@ -466,13 +474,42 @@ FocusScope{
                     id: __iconImage
                     anchors{
                         fill: parent
-                        margins: 2
+                        margins: root.circularButtonIcon? 0 : 2
+
+                        Behavior on margins {
+                            NumberAnimation {
+                                duration: 140
+                                easing.type: Easing.InOutSine
+                            }
+                        }
                     }
 
                     color: root.icon.color
                     source: root.icon.source
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
+
+                    layer.enabled: root.circularButtonIcon
+                    layer.effect: OpacityMask {
+                        maskSource: Item {
+                            width: root.width
+                            height: root.height
+                            Rectangle {
+                                anchors.centerIn: parent
+                                width: root.circularButtonIcon && root.borderIcon? root.width - 8: root.width
+                                height: width
+
+                                Behavior on width {
+                                    NumberAnimation {
+                                        duration: 140
+                                        easing.type: Easing.InOutSine
+                                    }
+                                }
+
+                                radius: Math.max(width, height)
+                            }
+                        }
+                    }
                 }
             }
         }
