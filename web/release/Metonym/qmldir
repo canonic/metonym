@@ -31,6 +31,7 @@ Pane 0.1 Pane.qml
 PaneTheme 0.1 PaneTheme.qml
 Popup 0.1 Popup.qml
 PopupTheme 0.1 PopupTheme.qml
+ProxyTheme 0.1 ProxyTheme.qml
 ScrollBar 0.1 ScrollBar.qml
 Table 0.1 Table.qml
 TextArea 0.1 TextArea.qml

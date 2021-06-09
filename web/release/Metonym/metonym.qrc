@@ -34,5 +34,6 @@
         <file>PopupTheme.qml</file>
         <file>FontSource.qml</file>
         <file>TextArea.qml</file>
+        <file>ProxyTheme.qml</file>
     </qresource>
 </RCC>
