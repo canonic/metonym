@@ -80,4 +80,5 @@ QtObject {
     required property PaneTheme pane
     required property IconSet icons
     required property PopupTheme popup
+    required property TextFieldTheme textField
 }

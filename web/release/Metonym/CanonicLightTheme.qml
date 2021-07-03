@@ -91,5 +91,7 @@ Theme {
         defaultYOffset: _darkTheme.popup.defaultYOffset
     }
 
+    textField: _darkTheme.textField
+
     icons: _darkTheme.icons
 }

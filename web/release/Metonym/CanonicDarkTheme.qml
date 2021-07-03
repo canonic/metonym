@@ -333,6 +333,10 @@ Theme {
         defaultYOffset: 16
     }
 
+    textField: TextFieldTheme {
+        fontGroup: root.font1
+    }
+
     icons: IconSet {
         reload: "font:," + c_METONYM_ICONS_FONT_SOURCE
         arrow_left: "font:," + c_METONYM_ICONS_FONT_SOURCE

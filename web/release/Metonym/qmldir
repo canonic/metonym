@@ -35,6 +35,8 @@ ProxyTheme 0.1 ProxyTheme.qml
 ScrollBar 0.1 ScrollBar.qml
 Table 0.1 Table.qml
 TextArea 0.1 TextArea.qml
+TextField 0.1 TextField.qml
+TextFieldTheme 0.1 TextFieldTheme.qml
 Theme 0.1 Theme.qml
 ThemedItem 0.1 ThemedItem.qml
 

@@ -35,5 +35,7 @@
         <file>FontSource.qml</file>
         <file>TextArea.qml</file>
         <file>ProxyTheme.qml</file>
+        <file>TextField.qml</file>
+        <file>TextFieldTheme.qml</file>
     </qresource>
 </RCC>
