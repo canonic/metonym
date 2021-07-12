@@ -37,5 +37,10 @@
         <file>ProxyTheme.qml</file>
         <file>TextField.qml</file>
         <file>TextFieldTheme.qml</file>
+        <file>ButtonTheme.qml</file>
+        <file>Constants.js</file>
+        <file>Font.js</file>
+        <file>LabelTheme.qml</file>
+        <file>Slider.qml</file>
     </qresource>
 </RCC>

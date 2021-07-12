@@ -33,6 +33,7 @@ Popup 0.1 Popup.qml
 PopupTheme 0.1 PopupTheme.qml
 ProxyTheme 0.1 ProxyTheme.qml
 ScrollBar 0.1 ScrollBar.qml
+Slider 0.1 Slider.qml
 Table 0.1 Table.qml
 TextArea 0.1 TextArea.qml
 TextField 0.1 TextField.qml
