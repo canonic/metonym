@@ -21,6 +21,9 @@ QtObject {
     required property string day
     required property string night
     required property string user
+    required property string canonic
+    required property string blender
+    required property string blenderArtistOrg
 
     // required property string caret_down
     // required property string caret_up
