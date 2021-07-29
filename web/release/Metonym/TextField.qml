@@ -43,6 +43,8 @@ QtControls.TextField {
         // Do not set as a binding to avoid binding loop
         root.font.family = hiddenProps.fontSource.fontLoader.name
         root.font.bold = hiddenProps.fontSource.requiresBold
-        root.font.italic = Qt.binding(function() {return root.text.length <= 0})
+
+        const requiresItalic = hiddenProps.fontSource.requiresItalic
+        root.font.italic = Qt.binding(function() {return requiresItalic || root.text.length <= 0})
     }
 }
