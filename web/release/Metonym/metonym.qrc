@@ -42,5 +42,7 @@
         <file>Font.js</file>
         <file>LabelTheme.qml</file>
         <file>Slider.qml</file>
+        <file>MenuTheme.qml</file>
+        <file>MenuBarItemTheme.qml</file>
     </qresource>
 </RCC>

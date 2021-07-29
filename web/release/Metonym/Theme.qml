@@ -77,6 +77,8 @@ QtObject {
     required property ButtonTheme button
     required property LabelTheme label
     required property LinkTheme link
+    required property MenuBarItemTheme menuBarItem
+    required property MenuTheme menu
     required property PaneTheme pane
     required property IconSet icons
     required property PopupTheme popup

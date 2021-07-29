@@ -4,6 +4,14 @@ import QtQuick.Controls 2.15 as QtControls
 QtControls.Menu {
     id: root
 
+    property alias theme: _themedItem.theme
+    property FontGroup fontGroup: root.theme.menu.fontGroup
+
+    ThemedItem {
+        id: _themedItem
+        inheritanceParent: root.parent
+    }
+
     property string iconSource: ''
 
     // Set to false to use the icons color instead of filling the icon
@@ -12,7 +20,7 @@ QtControls.Menu {
     property bool showIndicator: true
 
     font {
-        family: Styles.monterratRegular.name
+        family: root.fontGroup.getFontSource(Font.QtWeight.Regular, false).fontLoader.name
         pointSize: 8
     }
 
@@ -21,6 +29,7 @@ QtControls.Menu {
         implicitHeight: Styles.menuItemHeight
 
         arrow: Canvas {
+            id: arrowCanvas
             x: parent.width - width
             implicitWidth: 40
             implicitHeight: 40
@@ -31,7 +40,7 @@ QtControls.Menu {
 
             onPaint: {
                 var ctx = getContext("2d")
-                ctx.fillStyle = menuItem.highlighted ? "#ffffff" : "#black"
+                ctx.fillStyle = menuItem.highlighted ? root.theme.col0 : root.theme.col19
                 ctx.moveTo(15, 15)
                 ctx.lineTo(width - 15, height / 2)
                 ctx.lineTo(15, height - 15)
@@ -84,7 +93,7 @@ QtControls.Menu {
             text: menuItem.text
             font: menuItem.font
             opacity: enabled ? 1.0 : 0.3
-            color: menuItem.highlighted ? "black" : "black"
+            color: menuItem.highlighted ? root.theme.col0 : root.theme.col19
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight
@@ -96,7 +105,7 @@ QtControls.Menu {
             implicitHeight: Styles.menuItemHeight
 
             layer.enabled: true
-            color: 'white'
+            color: root.theme.col0
 
             Rectangle {
                 anchors.fill: parent
@@ -109,13 +118,13 @@ QtControls.Menu {
                     }
                 }
 
-                color: menuItem.highlighted ? Styles.brandColor : "transparent"
+                color: menuItem.highlighted ? root.theme.brand : "transparent"
             }
 
             Rectangle {
                 width: Styles.menuItemLeftBarWidth
                 height: parent.height
-                color: Styles.brandColor
+                color: root.theme.brand
                 visible: menuItem.highlighted
             }
         }

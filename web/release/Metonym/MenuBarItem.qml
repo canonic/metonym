@@ -3,7 +3,7 @@ import QtQuick.Controls 2.12 as QtControls
 import QtGraphicalEffects 1.15
 
 QtControls.MenuBarItem {
-    id: menuBarItem
+    id: root
 
     property alias theme: __internalThemedItem.theme
 
@@ -19,40 +19,54 @@ QtControls.MenuBarItem {
     implicitWidth: contentItem.implicitWidth + (horizontalPadding * 2)
     implicitHeight: 20 + (verticalPadding * 2)
 
-    property color backgroundColorDefault: Styles.menuBarItemBackgroundColorDefault
+    property color backgroundColourDefault: root.theme.menuBarItem.backgroundColourDefault
+    property color backgroundColourHighlighted: root.theme.menuBarItem.backgroundColourHighlighted
+    property color backgroundColourPressed: root.theme.menuBarItem.backgroundColourPressed
+
+    property color backgroundColourOpenedDefault: root.theme.menuBarItem.backgroundColourOpenedDefault
+    property color backgroundColourOpenedHighlighted: root.theme.menuBarItem.backgroundColourOpenedHighlighted
+    property color backgroundColourOpenedPressed: root.theme.menuBarItem.backgroundColourOpenedPressed
+
+    property color colourDefault: root.theme.menuBarItem.colourDefault
+    property color colourHighlighted: root.theme.menuBarItem.colourHighlighted
+    property color colourPressed: root.theme.menuBarItem.colourPressed
+
+    property color colourOpenedDefault: root.theme.menuBarItem.colourOpenedDefault
+    property color colourOpenedHighlighted: root.theme.menuBarItem.colourOpenedHighlighted
+    property color colourOpenedPressed: root.theme.menuBarItem.colourOpenedPressed
 
     Item {
         id: __hiddenProperties
 
         property color color: {
 
-            if(menuBarItem.menu.opened)
+            if(root.menu.opened)
             {
-                if(menuBarItem.pressed)
+                if(root.pressed)
                 {
-                    return Styles.menuBarItemColorOpenedPressed
+                    return root.colourOpenedPressed
                 }
 
-                if(menuBarItem.highlighted)
+                if(root.highlighted)
                 {
-                    return Styles.menuBarItemColorOpenedHighlighted
+                    return root.colourOpenedHighlighted
                 }
 
-                return Styles.menuBarItemColorOpenedDefault
+                return root.colourOpenedDefault
             }
             else
             {
-                if(menuBarItem.pressed)
+                if(root.pressed)
                 {
-                    return Styles.menuBarItemColorPressed
+                    return root.colourPressed
                 }
 
-                if(menuBarItem.highlighted)
+                if(root.highlighted)
                 {
-                    return Styles.menuBarItemColorHighlighted
+                    return root.colourHighlighted
                 }
 
-                return Styles.menuBarItemColorDefault
+                return root.colourDefault
             }
         }
 
@@ -65,32 +79,32 @@ QtControls.MenuBarItem {
 
         property color backgroundColor:  {
 
-            if(menuBarItem.menu.opened)
+            if(root.menu.opened)
             {
-                if(menuBarItem.pressed)
+                if(root.pressed)
                 {
-                    return Styles.menuBarItemBackgroundColorOpenedPressed
+                    return root.backgroundColourOpenedPressed
                 }
 
-                if(menuBarItem.hovered)
+                if(root.hovered)
                 {
-                    return Styles.menuBarItemBackgroundColorOpenedHovered
+                    return root.backgroundColourOpenedHighlighted
                 }
 
-                return Styles.menuBarItemBackgroundColorOpenedDefault
+                return root.backgroundColourOpenedDefault
             }
 
-            if(menuBarItem.pressed)
+            if(root.pressed)
             {
-                return Styles.menuBarItemBackgroundColorPressed
+                return root.backgroundColourPressed
             }
 
-            if(menuBarItem.highlighted)
+            if(root.highlighted)
             {
-                return Styles.menuBarItemBackgroundColorHighlighted
+                return root.backgroundColourHighlighted
             }
 
-            return menuBarItem.backgroundColorDefault
+            return root.backgroundColourDefault
         }
 
         Behavior on backgroundColor {
@@ -143,75 +157,22 @@ QtControls.MenuBarItem {
         implicitHeight: 8
 
         anchors {
-            horizontalCenter: menuBarItem.horizontalCenter
-            verticalCenter: menuBarItem.verticalCenter
+            horizontalCenter: root.horizontalCenter
+            verticalCenter: root.verticalCenter
         }
 
         Icon {
             id: __icon
             color: __hiddenProperties.color
-            source: menuBarItem.menu.iconSource
+            source: root.menu.iconSource
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
 
             width:  visible? 20: 0
             height: visible? 20: __textContainer.height
 
-            visible: Boolean(menuBarItem.menu.iconSource)
+            visible: Boolean(root.menu.iconSource)
         }
-
-        /*
-        Item {
-            id: __iconContainer
-            width: __iconContainer.visible? __iconImage.width : 0
-            height: __textContainer.height // We don't want the row stretching vertically due to the size of the icon
-
-            anchors {
-                verticalCenter: parent.verticalCenter
-            }
-
-            Rectangle {
-                id: __fillColor
-                color: __hiddenProperties.color
-                anchors.fill: __iconImage
-                visible: false
-            }
-
-            Image{
-                id: __iconImage
-                width: 20
-                height: 20
-                mipmap: true
-                smooth: true
-
-                anchors {
-                    verticalCenter: parent.verticalCenter
-                }
-
-                source: menuBarItem.menu.iconSource
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                visible: !menuBarItem.menu.fillIcon
-            }
-
-            OpacityMask {
-                id: __iconImageOpacityMask
-                source: __fillColor
-                maskSource: __iconImage
-
-                width: __iconImage.width
-                height: __iconImage.height
-
-                anchors {
-                    verticalCenter: parent.verticalCenter
-                }
-
-                visible: menuBarItem.menu.fillIcon
-            }
-
-            visible: Boolean(menuBarItem.menu.iconSource)
-        }
-        */
 
         Item {
             id: __textContainer
@@ -228,7 +189,7 @@ QtControls.MenuBarItem {
             Text {
                 id: menuBarItemText
 
-                text: menuBarItem.text
+                text: root.text
                 color: __hiddenProperties.color
                 elide: Text.ElideRight
 
@@ -242,7 +203,7 @@ QtControls.MenuBarItem {
                 }
             }
 
-            visible: Boolean(menuBarItem.text.length)
+            visible: Boolean(root.text.length)
         }
 
 
@@ -269,13 +230,13 @@ QtControls.MenuBarItem {
                     verticalCenter: parent.verticalCenter
                 }
 
-                source: menuBarItem.menu.opened? root.theme.icons.angleUp : root.theme.icons.angleDown
+                source: root.menu.opened? root.theme.icons.angleUp : root.theme.icons.angleDown
 
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
             }
 
-            visible: Boolean(menuBarItem.menu) && menuBarItem.menu.count && menuBarItem.menu.showIndicator
+            visible: Boolean(root.menu) && root.menu.count && root.menu.showIndicator
         }
     }
 
@@ -291,16 +252,16 @@ QtControls.MenuBarItem {
 
         Rectangle {
             anchors.fill: parent
-            radius: menuBarItem.radius
+            radius: root.radius
             color: __hiddenProperties.backgroundColor
         }
 
         // The bottom corners only have a radius if not open
         Rectangle {
-            y: menuBarItem.radius
-            height: parent.height - menuBarItem.radius
+            y: root.radius
+            height: parent.height - root.radius
             width: parent.width
-            visible: menuBarItem.menu.opened
+            visible: root.menu.opened
             color: __hiddenProperties.backgroundColor
         }
     }

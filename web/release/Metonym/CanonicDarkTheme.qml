@@ -270,7 +270,7 @@ Theme {
 
     readonly property color brand: col20
     readonly property color brandHighlight: getInterpolatedColour(20.1)
-    readonly property color brandDefault: getInterpolatedColour(20.1)
+    readonly property color brandDefault: getInterpolatedColour(20)
     readonly property color brandSelected: getInterpolatedColour(20.5)
     readonly property color brandPressed: getInterpolatedColour(20.2)
 
@@ -316,6 +316,28 @@ Theme {
         defaultFocusedColor: defaultColor
         hoverFocusedColor: hoverColor
         pressedFocusedColor: pressedColor
+    }
+
+    menuBarItem: MenuBarItemTheme {
+        backgroundColourDefault: button.backgroundColor
+        backgroundColourHighlighted: button.backgroundHoveredColor
+        backgroundColourPressed: button.backgroundPressedColor
+
+        backgroundColourOpenedDefault: brandDefault
+        backgroundColourOpenedHighlighted: brandHighlight
+        backgroundColourOpenedPressed: brandPressed
+
+        colourDefault: button.defaultColor
+        colourHighlighted: button.hoverColor
+        colourPressed: button.pressedColor
+
+        colourOpenedDefault: col19
+        colourOpenedHighlighted: col19
+        colourOpenedPressed: col19
+    }
+
+    menu: MenuTheme {
+        fontGroup: root.font1
     }
 
     pane: PaneTheme {

@@ -76,6 +76,26 @@ Theme {
 
     link: _darkTheme.link
 
+    menuBarItem: MenuBarItemTheme {
+        backgroundColourDefault: button.backgroundColor
+        backgroundColourHighlighted: button.backgroundHoveredColor
+        backgroundColourPressed: button.backgroundPressedColor
+
+        backgroundColourOpenedDefault: brandDefault
+        backgroundColourOpenedHighlighted: brandHighlight
+        backgroundColourOpenedPressed: brandPressed
+
+        colourDefault: button.defaultColor
+        colourHighlighted: button.hoverColor
+        colourPressed: button.pressedColor
+
+        colourOpenedDefault: col19
+        colourOpenedHighlighted: col19
+        colourOpenedPressed: col19
+    }
+
+    menu: _darkTheme.menu
+
     pane: PaneTheme {
         radius:  _darkTheme.pane.radius
         backgroundColor: col18
