@@ -130,7 +130,7 @@ QtControls.Menu {
         }
     }
 
-    background: Rectangle {
+    background: Pane {
 
         implicitWidth: {
             let maxWidth = 0
@@ -146,7 +146,9 @@ QtControls.Menu {
         }
 
         implicitHeight: Styles.menuItemHeight
-        color: 'white'
-        layer.enabled: true
+
+        radius: 0
+        backgroundColor: 'white'
+        elevation: 10
     }
 }
