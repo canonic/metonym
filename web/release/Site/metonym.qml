@@ -1,4 +1,5 @@
 import QtQuick 2.15
+import QtQuick.Controls 2.15 as QtControls
 import '../Metonym' as Metonym
 
 Metonym.ThemedItem {
@@ -85,14 +86,18 @@ Metonym.ThemedItem {
 
     }
 
-    Loader {
-        id: componentContainer
+    QtControls.ScrollView {
 
         anchors {
             top: header.bottom
             bottom: parent.bottom
             left: componentsList.right
             right: parent.right
+        }
+
+        Loader {
+            id: componentContainer
+            width: parent.width
         }
     }
 }
