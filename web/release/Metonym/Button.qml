@@ -109,29 +109,29 @@ FocusScope{
             {
                 if(__mouseArea.containsPress)
                 {
-                    return root.mouseDownFocusedColor
+                    return root.theme.border.borderColorFocusedMouseDown
                 }
 
                 if(__mouseArea.containsMouse)
                 {
-                    return root.hoverFocusedColor
+                    return root.theme.border.borderColorFocusedHovered
                 }
 
-                return root.defaultFocusedColor
+                return root.theme.border.borderColorFocused
             }
             else
             {
                 if(__mouseArea.containsPress)
                 {
-                    return Styles.buttonBorderMouseDownColor
+                    return root.theme.border.borderColorMouseDown
                 }
                 else if(__mouseArea.containsMouse)
                 {
-                    return Styles.buttonBorderHoveredColor
+                    return root.theme.border.borderColorHovered
                 }
                 else
                 {
-                    return Styles.buttonBorderDefaultColor
+                    return root.theme.border.borderColor
                 }
             }
         }
