@@ -383,5 +383,7 @@ Theme {
         canonic: "font:," + c_METONYM_ICONS_FONT_SOURCE
         blender: "font:," + c_METONYM_ICONS_FONT_SOURCE
         blenderArtistOrg: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        haiku: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        metonym: "font:," + c_METONYM_ICONS_FONT_SOURCE
     }
 }

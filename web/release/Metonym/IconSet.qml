@@ -24,6 +24,8 @@ QtObject {
     required property string canonic
     required property string blender
     required property string blenderArtistOrg
+    required property string haiku
+    required property string metonym
 
     // required property string caret_down
     // required property string caret_up
