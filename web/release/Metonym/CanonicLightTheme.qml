@@ -42,6 +42,11 @@ Theme {
     readonly property color brandSelected: getInterpolatedColour(20.5)
     readonly property color brandPressed: getInterpolatedColour(20.2)
 
+    function colourMain(value, alpha)
+    {
+        return _darkTheme.colourMain(value, alpha)
+    }
+
     border: BorderTheme {
         color: col17
         colorFocused: brandDefault

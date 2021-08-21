@@ -116,7 +116,6 @@ Metonym.ThemedItem {
             borderIcon: true
         }
 
-
         Text {
             text: 'API'
             font {

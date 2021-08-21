@@ -260,7 +260,7 @@ Theme {
     col13: '#404349'
     col14: '#303339'
     col15: '#22252a'
-    col16: '#191c21'
+    col16: colourMain(0.3428886438809261)
     col17: '#0c0e12'
     col18: '#06070d'
     col19: '#FFFFFF'
@@ -273,6 +273,36 @@ Theme {
     readonly property color brandDefault: getInterpolatedColour(20)
     readonly property color brandSelected: getInterpolatedColour(20.5)
     readonly property color brandPressed: getInterpolatedColour(20.2)
+
+    function colourMain(value, alpha)
+    {
+        if (value < 0 || value > 1) {
+            throw "value must be between 0 and 1"
+        }
+
+        if (alpha === undefined)
+        {
+            alpha = 1
+        }
+
+        const hue = 231 / 360
+
+        const x0 = 1
+        const y0 = 0
+        const x1 = 0.41
+        const y1 = 0.165
+        const x2 = 0.082
+        const y2 = -0.27
+        const x3 = 0
+        const y3 = 1
+
+        const t = Math.sqrt(value)
+
+        const x = (1-t) * ((1-t)*(((1-t)*x0)+(t*x1))+(t*(((1-t)*x1)+(t*x2)))) + (t*(((1-t)*(((1-t)*x1)+(t*x2)))+(t*(((1-t)*x2)+(t*x3)))))
+        const y = (1-t) * ((1-t)*(((1-t)*y0)+(t*y1))+(t*(((1-t)*y1)+(t*y2)))) + (t*(((1-t)*(((1-t)*y1)+(t*y2)))+(t*(((1-t)*y2)+(t*y3)))))
+
+        return Qt.hsva(hue, x, y, alpha)
+    }
 
     border: BorderTheme {
         color: col17

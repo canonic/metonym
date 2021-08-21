@@ -50,15 +50,25 @@ Metonym.ThemedItem {
         width: parent.width
         height: 80
 
-        color: 'red'
+        color: 'black'
 
-        Text {
-            text: 'home'
-            color: 'white'
-            TapHandler {
-                onTapped: root.component = null
+        Row {
+            Metonym.Icon {
+                width: 40
+                height: 40
+                source: root.theme.icons.metonym
+                color: 'white'
+            }
+
+            Metonym.Label {
+                text: 'home'
+                color: 'white'
+                TapHandler {
+                    onTapped: root.component = null
+                }
             }
         }
+
 
     }
 
