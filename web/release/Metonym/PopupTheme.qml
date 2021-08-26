@@ -5,6 +5,7 @@ QtObject {
     required property color backgroundColor
     required property double elevation
     required property color shadowColor
+    required property color dimColor
 
     // The default distance the popup is positioned from it's parent in the Y axis.
     required property int defaultYOffset

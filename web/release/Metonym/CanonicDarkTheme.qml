@@ -382,6 +382,7 @@ Theme {
         backgroundColor: col16
         elevation: 16
         shadowColor: "#66000000"
+        dimColor: "#66000000"
         defaultYOffset: 16
     }
 

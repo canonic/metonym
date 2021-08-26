@@ -113,6 +113,7 @@ Theme {
         backgroundColor: col19
         elevation: _darkTheme.popup.elevation
         shadowColor: _darkTheme.popup.shadowColor
+        dimColor: _darkTheme.popup.shadowColor
         defaultYOffset: _darkTheme.popup.defaultYOffset
     }
 
