@@ -1,6 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QtControls
-import QtGraphicalEffects 1.15 as QtGraphicalEffects
+import Qt5Compat.GraphicalEffects as QtGraphicalEffects
 
 QtControls.Pane {
     id: root
@@ -87,7 +87,6 @@ QtControls.Pane {
             horizontalOffset: 0;
             verticalOffset: root.elevation * 0.1;
             radius: root.elevation;
-            samples: 16;
             color: root.shadowColor;
 
             visible: root.elevation !== 0

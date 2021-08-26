@@ -181,7 +181,6 @@ FocusScope{
         visible: false
     }
 
-
     Item {
         id: buttonBorderContainer
 
@@ -211,7 +210,6 @@ FocusScope{
                 }
             }
 
-            samples: 16
             spread: 0.3
             source: buttonBorder
             visible: true
@@ -464,11 +462,6 @@ FocusScope{
                 border {
                     color:  __iconImagePlusBorder.visible? __hiddenProperties.color : 'transparent'
                     width: root.borderIcon? 1 : 0
-                }
-
-                layer {
-                    enabled: true
-                    samples: 32
                 }
 
                 Icon {
