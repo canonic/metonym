@@ -1,5 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QtControls
+import QtQuick.Controls.Material.impl as MaterialImpl
+import QtQuick.Window
 
 QtControls.Menu {
     id: root
@@ -19,9 +21,51 @@ QtControls.Menu {
 
     property bool showIndicator: true
 
+    property double radius: theme.popup.radius
+    property color backgroundColor: theme.popup.backgroundColor
+    property double elevation: theme.popup.elevation
+    property color shadowColor: theme.popup.shadowColor
+    property color dimColor: theme.popup.dimColor
+
+
+    implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
+                            contentWidth + leftPadding + rightPadding)
+    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
+                             contentHeight + topPadding + bottomPadding)
+
+    margins: 0
+    verticalPadding: 8
+
+    transformOrigin: !cascade ? Item.Top : (mirrored ? Item.TopRight : Item.TopLeft)
+
     font {
         family: root.fontGroup.getFontSource(Font.QtWeight.Regular, false).fontLoader.name
         pointSize: 8
+    }
+
+    enter: Transition {
+        // grow_fade_in
+        NumberAnimation { property: "scale"; from: 0.9; to: 1.0; easing.type: Easing.OutQuint; duration: 220 }
+        NumberAnimation { property: "opacity"; from: 0.0; to: 1.0; easing.type: Easing.OutCubic; duration: 150 }
+    }
+
+    exit: Transition {
+        // shrink_fade_out
+        NumberAnimation { property: "scale"; from: 1.0; to: 0.9; easing.type: Easing.OutQuint; duration: 220 }
+        NumberAnimation { property: "opacity"; from: 1.0; to: 0.0; easing.type: Easing.OutCubic; duration: 150 }
+    }
+
+    contentItem: ListView {
+        implicitHeight: contentHeight
+
+        model: root.contentModel
+        interactive: Window.window
+                        ? contentHeight + root.topPadding + root.bottomPadding > Window.window.height
+                        : false
+        clip: true
+        currentIndex: root.currentIndex
+
+        QtControls.ScrollIndicator.vertical: QtControls.ScrollIndicator {}
     }
 
     delegate: QtControls.MenuItem {
@@ -130,8 +174,7 @@ QtControls.Menu {
         }
     }
 
-    background: Pane {
-
+    background: Rectangle {
         implicitWidth: {
             let maxWidth = 0
             for(var i = 0; i < root.count ; i++)
@@ -144,11 +187,22 @@ QtControls.Menu {
             }
             return maxWidth
         }
-
         implicitHeight: Styles.menuItemHeight
+        color: root.backgroundColor
 
-        radius: 0
-        backgroundColor: 'white'
-        elevation: 10
+        layer.enabled: root.elevation > 0
+        layer.effect: MaterialImpl.ElevationEffect {
+            elevation: root.elevation
+        }
+    }
+
+    QtControls.Overlay.modal: Rectangle {
+        color: root.backgroundDimColor
+        Behavior on opacity { NumberAnimation { duration: 150 } }
+    }
+
+    QtControls.Overlay.modeless: Rectangle {
+        color: root.backgroundDimColor
+        Behavior on opacity { NumberAnimation { duration: 150 } }
     }
 }
