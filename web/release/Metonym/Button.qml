@@ -39,7 +39,6 @@ FocusScope{
     // font properties
     property int capitalization: Font.MixedCase
     property int pointSize: 10
-    property font fontFamily: Styles.monterratBold.name
     property bool bold: true
     property bool underline: false
     property int horizontalAlignment: Text.AlignHCenter
@@ -64,6 +63,8 @@ FocusScope{
 
     Item {
         id: __hiddenProperties
+
+        readonly property FontSource fontSource: root.theme.font1.getFontSource(Font.Weight.SemiBold, false)
 
         property color color: {
 
@@ -392,8 +393,8 @@ FocusScope{
             horizontalAlignment: Text.AlignHCenter
 
             font{
-                family: root.fontFamily
                 bold: root.bold
+                family: __hiddenProperties.fontSource.fontLoader.name
                 capitalization: root.capitalization
                 pointSize: root.pointSize
                 underline: {
