@@ -1,6 +1,5 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.12 as QtControls
-import QtGraphicalEffects 1.15
 
 QtControls.MenuBar {
     id: root

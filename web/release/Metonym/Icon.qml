@@ -1,5 +1,5 @@
 import QtQuick 2.15
-import QtGraphicalEffects 1.15
+import Qt5Compat.GraphicalEffects as QtGraphicalEffects
 
 Item {
     id: root
@@ -110,7 +110,7 @@ Item {
         visible: false
     }
 
-    OpacityMask {
+    QtGraphicalEffects.OpacityMask {
         id: addressBarIconOpactiyMask
 
         anchors.fill: __icon

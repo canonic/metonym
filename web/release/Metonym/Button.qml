@@ -1,5 +1,5 @@
 import QtQuick 2.15
-import QtGraphicalEffects 1.15
+import Qt5Compat.GraphicalEffects as QtGraphicalEffects
 
 
 FocusScope{
@@ -186,7 +186,7 @@ FocusScope{
 
         anchors.fill: parent
 
-        Glow {
+        QtGraphicalEffects.Glow {
             id: __buttonBorderGlow
 
             anchors.fill: buttonBorder
@@ -490,7 +490,7 @@ FocusScope{
                     verticalAlignment: Text.AlignVCenter
 
                     layer.enabled: root.circularButtonIcon
-                    layer.effect: OpacityMask {
+                    layer.effect: QtGraphicalEffects.OpacityMask {
                         maskSource: Item {
                             width: root.width
                             height: root.height
