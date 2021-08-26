@@ -552,12 +552,12 @@ FocusScope{
 
         onPressed: root.forceActiveFocus()
 
-        onClicked: {
+        onClicked: (mouse) => {
             root.forceActiveFocus()
             root.clicked(mouse)
         }
 
-        onPressAndHold: {
+        onPressAndHold: (mouse) => {
             root.pressAndHold(mouse)
         }
     }
