@@ -44,5 +44,6 @@
         <file>Slider.qml</file>
         <file>MenuTheme.qml</file>
         <file>MenuBarItemTheme.qml</file>
+        <file>Overlay.qml</file>
     </qresource>
 </RCC>

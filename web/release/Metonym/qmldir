@@ -29,6 +29,7 @@ MenuItem 0.1 MenuItem.qml
 MenuBarItemTheme 0.1 MenuBarItemTheme.qml
 MenuSeparator 0.1 MenuSeparator.qml
 MenuTheme 0.1 MenuTheme.qml
+Overlay 0.1 Overlay.qml
 Pane 0.1 Pane.qml
 PaneTheme 0.1 PaneTheme.qml
 Popup 0.1 Popup.qml
