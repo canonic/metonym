@@ -103,6 +103,15 @@ Theme {
             },
 
             FontSource {
+                source: './fonts/Garnet-Capitals-Regular.ttf'
+                preferedWeight: Font.Weight.Regular
+                supportsItalic: false
+                supportsNonItalic: true
+                requiresItalic: false
+                requiresBold: false
+            },
+
+            FontSource {
                 source: './fonts/Garnet-Capitals-Bold.ttf'
                 preferedWeight: Font.Weight.Bold
                 supportsItalic: false
