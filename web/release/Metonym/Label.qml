@@ -14,7 +14,7 @@ Text {
     QtObject {
         id: hiddenProps
         readonly property FontSource fontSource: root.fontGroup.getFontSource(root.font.weight,
-                                                                              root.font.italic)
+                                                                              root.font.italic)   
     }
 
     font {
@@ -24,9 +24,8 @@ Text {
     color: root.theme.col0
 
     Component.onCompleted: {
-        // Do not set as a binding to avoid binding loop
-        root.font.family = hiddenProps.fontSource.fontLoader.name
-        root.font.bold = hiddenProps.fontSource.requiresBold
+        root.font.family = Qt.binding(() => {return hiddenProps.fontSource.fontLoader.name})
+        root.font.bold = Qt.binding(() => {return hiddenProps.fontSource.requiresBold})
     }
 }
 
