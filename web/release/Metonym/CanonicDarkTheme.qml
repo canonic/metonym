@@ -427,5 +427,6 @@ Theme {
         blenderArtistOrg: "font:," + c_METONYM_ICONS_FONT_SOURCE
         haiku: "font:," + c_METONYM_ICONS_FONT_SOURCE
         metonym: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        view: "font:," + c_METONYM_ICONS_FONT_SOURCE
     }
 }
