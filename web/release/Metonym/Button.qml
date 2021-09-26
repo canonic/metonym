@@ -36,6 +36,8 @@ FocusScope{
     signal pressAndHold(QtObject mouse)
     readonly property bool hovered: __mouseArea.containsMouse
 
+    property alias horizontalPadding: __content.horizontalPadding
+
     // font properties
     property int capitalization: Font.MixedCase
     property int pointSize: 10
