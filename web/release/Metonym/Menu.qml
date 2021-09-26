@@ -197,12 +197,12 @@ QtControls.Menu {
     }
 
     QtControls.Overlay.modal: Rectangle {
-        color: root.backgroundDimColor
+        color: root.dimColor
         Behavior on opacity { NumberAnimation { duration: 150 } }
     }
 
     QtControls.Overlay.modeless: Rectangle {
-        color: root.backgroundDimColor
+        color: root.dimColor
         Behavior on opacity { NumberAnimation { duration: 150 } }
     }
 }
