@@ -145,6 +145,11 @@ FocusScope{
         }
 
         property color backgroundColor:  {
+            if (!root.enabled)
+            {
+                return root.backgroundColor
+            }
+
             if(__mouseArea.containsPress)
             {
                 return root.backgroundPressedColor
