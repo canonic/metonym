@@ -43,6 +43,7 @@ TextField 0.1 TextField.qml
 TextFieldTheme 0.1 TextFieldTheme.qml
 Theme 0.1 Theme.qml
 ThemedItem 0.1 ThemedItem.qml
+ToolTip 0.1 ToolTip.qml
 
 # JS files
 Constants 0.1 Constants.js

@@ -45,5 +45,6 @@
         <file>MenuTheme.qml</file>
         <file>MenuBarItemTheme.qml</file>
         <file>Overlay.qml</file>
+        <file>ToolTip.qml</file>
     </qresource>
 </RCC>
