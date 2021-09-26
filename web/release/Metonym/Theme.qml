@@ -1,6 +1,9 @@
 import QtQuick 2.15
 
+
 QtObject {
+    required property string theme
+
     required property FontGroup font1
     required property FontGroup font2
     required property FontGroup font3

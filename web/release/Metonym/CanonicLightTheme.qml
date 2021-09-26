@@ -7,6 +7,7 @@ Theme {
 
     readonly property CanonicDarkTheme _darkTheme: CanonicDarkTheme {}
 
+    theme: 'light'
     font1: _darkTheme.font1
     font2: _darkTheme.font2
     font3: _darkTheme.font3

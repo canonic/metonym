@@ -3,6 +3,8 @@ import QtQuick 2.15
 
 
 QtObject {
+    id: root
+
     readonly property color colourBlue: "blue"
 
     readonly property color brandColor: '#1cfe98'
@@ -192,6 +194,29 @@ QtObject {
     readonly property real __cubicOffsetModifier: 1.3
     readonly property int __gridWidthAndHeight: 200
     readonly property int __operationRadius: 60
+
+    property var darkThemeLoader: Loader {
+        id: darkThemeLoader
+        source: Constants.CANONIC_DARK_THEME_SOURCE
+    }
+
+    property var lightThemeLoader: Loader {
+        id: lightThemeLoader
+        source: Constants.CANONIC_LIGHT_THEME_SOURCE
+    }
+
+    property bool themesLoaded: darkThemeLoader.status === Loader.Ready && lightThemeLoader.status === Loader.Ready
+    property var theme: {
+            const theme = window.theme
+            if (theme === Constants.CANONIC_THEME_LIGHT)
+            {
+                return lightThemeLoader.item
+            }
+            else
+            {
+                return darkThemeLoader.item
+            }
+        }
 }
 
 

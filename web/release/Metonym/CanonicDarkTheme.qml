@@ -6,6 +6,8 @@ Theme {
     // Constants
     readonly property string c_METONYM_ICONS_FONT_SOURCE: "./fonts/metonym-icons.ttf"
 
+    theme: 'dark'
+
     font1: FontGroup {
         fontSources: [
             FontSource {

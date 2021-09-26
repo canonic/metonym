@@ -18,6 +18,7 @@ Item {
         while(parent)
         {
             const parentTheme = parent.theme
+
             if (parentTheme && parentTheme instanceof Theme)
             {
                 return parentTheme
@@ -26,17 +27,11 @@ Item {
             parent = parent.parent
         }
 
-        // If unable to inherit the theme then try the global window object
-        if (typeof window !== 'undefined') {
-            const themeComponent = window.themeComponent
-
-            if(themeComponent !== null && themeComponent.status === Component.Ready )
+        {
+            const stylesTheme = Styles.theme
+            if (stylesTheme)
             {
-                const themeObject = themeComponent.createObject(__hiddenContainer)
-                if (themeObject instanceof Theme)
-                {
-                    return themeObject
-                }
+                return stylesTheme
             }
         }
 
