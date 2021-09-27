@@ -39,6 +39,12 @@ QtControls.TextArea {
 
     font.italic: text.length <= 0
 
+    background: Rectangle {
+        implicitWidth: 200
+        implicitHeight: 40
+        color: "transparent"
+    }
+
     Component.onCompleted: {
         // Do not set as a binding to avoid binding loop
         root.font.family = hiddenProps.fontSource.fontLoader.name
