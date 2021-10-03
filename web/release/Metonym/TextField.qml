@@ -28,6 +28,7 @@ QtControls.TextField {
     }
 
     color: root.theme.col0
+    placeholderTextColor : root.theme.setColourAlpha(root.color, 0.6)
 
     background: Item {
         Rectangle{
