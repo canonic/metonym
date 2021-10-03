@@ -27,6 +27,7 @@ QtObject {
     required property string haiku
     required property string metonym
     required property string view
+    required property string laurelWreathHalf
 
     // required property string caret_down
     // required property string caret_up

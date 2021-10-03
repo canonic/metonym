@@ -428,5 +428,6 @@ Theme {
         haiku: "font:," + c_METONYM_ICONS_FONT_SOURCE
         metonym: "font:," + c_METONYM_ICONS_FONT_SOURCE
         view: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        laurelWreathHalf: "font:," + c_METONYM_ICONS_FONT_SOURCE
     }
 }
