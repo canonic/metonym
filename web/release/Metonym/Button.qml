@@ -188,45 +188,52 @@ FocusScope{
         visible: false
     }
 
+    QtGraphicalEffects.Glow {
+        id: __buttonBorderGlow
+
+        anchors.fill: buttonBorderContainer
+
+        radius: 4
+        color: {
+            if(root.containsFocus)
+            {
+                return Styles.buttonBorderGlowColorFocusedDefault
+            }
+            else{
+                return Styles.buttonBorderGlowColorDefault
+            }
+        }
+
+        opacity: __mouseArea.containsMouse? 1 : 0
+        Behavior on opacity {
+            NumberAnimation {
+                duration: 140
+                easing.type: Easing.InOutSine
+            }
+        }
+
+        spread: 0.3
+        source: buttonBorderContainer
+        visible: root.bordered
+    }
+
     Item {
         id: buttonBorderContainer
 
-        anchors.fill: parent
-
-        QtGraphicalEffects.Glow {
-            id: __buttonBorderGlow
-
-            anchors.fill: buttonBorder
-
-            radius: 4
-            color: {
-                if(root.containsFocus)
-                {
-                    return Styles.buttonBorderGlowColorFocusedDefault
-                }
-                else{
-                    return Styles.buttonBorderGlowColorDefault
-                }
-            }
-
-            opacity: __mouseArea.containsMouse? 1 : 0
-            Behavior on opacity {
-                NumberAnimation {
-                    duration: 140
-                    easing.type: Easing.InOutSine
-                }
-            }
-
-            spread: 0.3
-            source: buttonBorder
-            visible: true
+        anchors {
+            fill: parent
+            margins: -__buttonBorderGlow.radius
         }
 
         Rectangle {
             id: buttonBorder
             radius: root.radius
             color: root.showBackground? __hiddenProperties.backgroundColor: 'transparent'
-            anchors.fill: parent
+
+            anchors {
+                fill: parent
+                margins: __buttonBorderGlow.radius
+            }
 
             // the ammount the border should overlap with the image
             property real overlap: 0
