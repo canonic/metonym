@@ -397,6 +397,12 @@ Theme {
         defaultYOffset: 16
     }
 
+    splitView: SplitViewTheme {
+        handleDefaultColor: root.colourMain(0.45)
+        handleHoveredColor: root.brandHighlight
+        handlePressedColor: root.colourMain(0.2)
+    }
+
     textField: TextFieldTheme {
         fontGroup: root.font1
     }

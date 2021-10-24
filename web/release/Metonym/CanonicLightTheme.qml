@@ -1,6 +1,7 @@
 import QtQuick 2.15
 
 Theme {
+    id: root
 
     // Constants
     readonly property string c_METONYM_ICONS_FONT_SOURCE: "./fonts/metonym-icons.ttf"
@@ -116,6 +117,12 @@ Theme {
         shadowColor: _darkTheme.popup.shadowColor
         dimColor: _darkTheme.popup.shadowColor
         defaultYOffset: _darkTheme.popup.defaultYOffset
+    }
+
+    splitView: SplitViewTheme {
+        handleDefaultColor: root.colourMain(0.95)
+        handleHoveredColor: root.brandHighlight
+        handlePressedColor: root.colourMain(0.6)
     }
 
     textField: _darkTheme.textField

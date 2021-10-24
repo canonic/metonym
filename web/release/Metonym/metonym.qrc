@@ -46,5 +46,7 @@
         <file>MenuBarItemTheme.qml</file>
         <file>Overlay.qml</file>
         <file>ToolTip.qml</file>
+        <file>SplitView.qml</file>
+        <file>SplitViewTheme.qml</file>
     </qresource>
 </RCC>

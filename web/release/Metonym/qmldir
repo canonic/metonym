@@ -37,6 +37,8 @@ PopupTheme 0.1 PopupTheme.qml
 ProxyTheme 0.1 ProxyTheme.qml
 ScrollBar 0.1 ScrollBar.qml
 Slider 0.1 Slider.qml
+SplitView 0.1 SplitView.qml
+SplitViewTheme 0.1 SplitViewTheme.qml
 Table 0.1 Table.qml
 TextArea 0.1 TextArea.qml
 TextField 0.1 TextField.qml

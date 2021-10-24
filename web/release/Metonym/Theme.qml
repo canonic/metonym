@@ -90,5 +90,6 @@ QtObject {
     required property PaneTheme pane
     required property IconSet icons
     required property PopupTheme popup
+    required property SplitViewTheme splitView
     required property TextFieldTheme textField
 }
