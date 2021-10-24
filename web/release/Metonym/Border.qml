@@ -1,5 +1,5 @@
 import QtQuick 2.15
-import QtGraphicalEffects 1.15
+import Qt5Compat.GraphicalEffects as QtGraphicalEffects
 
 ThemedItem {
     id: root
@@ -41,7 +41,7 @@ ThemedItem {
 
 
 
-    Glow {
+    QtGraphicalEffects.Glow {
         id: __buttonBorderGlow
 
         anchors.fill: buttonBorder
@@ -57,7 +57,6 @@ ThemedItem {
             }
         }
 
-        samples: 16
         spread: 0.3
         source: buttonBorder
     }
