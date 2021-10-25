@@ -79,7 +79,10 @@ Theme {
         backgroundPressedColor: getInterpolatedColour(16.9)
     }
 
-    label: _darkTheme.label
+    label: LabelTheme {
+        fontGroup: root.font1
+        disabledColor: root.colourMain(0.8)
+    }
 
     link: _darkTheme.link
 

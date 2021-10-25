@@ -347,6 +347,7 @@ Theme {
 
     label: LabelTheme {
         fontGroup: root.font1
+        disabledColor: root.colourMain(0.8)
     }
 
     link: LinkTheme {

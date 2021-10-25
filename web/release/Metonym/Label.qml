@@ -21,7 +21,9 @@ Text {
         pointSize: 10
     }
 
-    color: root.theme.col0
+    property color disabledColor: root.theme.label.disabledColor
+    property color defaultColor: root.theme.col0
+    color: root.enabled? defaultColor : root.disabledColor
 
     Component.onCompleted: {
         root.font.family = Qt.binding(() => {return hiddenProps.fontSource.fontLoader.name})
