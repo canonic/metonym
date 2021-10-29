@@ -436,5 +436,8 @@ Theme {
         metonym: "font:," + c_METONYM_ICONS_FONT_SOURCE
         view: "font:," + c_METONYM_ICONS_FONT_SOURCE
         laurelWreathHalf: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        warningTriangle: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        warningCircle: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        consolePrompt: "font:," + c_METONYM_ICONS_FONT_SOURCE
     }
 }

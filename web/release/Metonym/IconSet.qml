@@ -28,6 +28,9 @@ QtObject {
     required property string metonym
     required property string view
     required property string laurelWreathHalf
+    required property string warningTriangle
+    required property string warningCircle
+    required property string consolePrompt
 
     // required property string caret_down
     // required property string caret_up
