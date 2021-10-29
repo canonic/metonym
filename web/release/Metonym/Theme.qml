@@ -62,6 +62,17 @@ QtObject {
      * source - https://stackoverflow.com/a/56348573/14807704
      */
     function blendColors(colorA, colorB, amount) {
+
+        // Convert to color types
+        if ( typeof colorA === 'object')
+        {
+            colorA = colorA.toString()
+        }
+        if (typeof colorB === 'object')
+        {
+            colorB = colorB.toString()
+        }
+
         const [rA, gA, bA] = colorA.match(/\w\w/g).map((c) => parseInt(c, 16));
         const [rB, gB, bB] = colorB.match(/\w\w/g).map((c) => parseInt(c, 16));
         const r = Math.round(rA + (rB - rA) * amount).toString(16).padStart(2, '0');
