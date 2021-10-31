@@ -439,5 +439,6 @@ Theme {
         warningTriangle: "font:," + c_METONYM_ICONS_FONT_SOURCE
         warningCircle: "font:," + c_METONYM_ICONS_FONT_SOURCE
         consolePrompt: "font:," + c_METONYM_ICONS_FONT_SOURCE
+        canonicPlayground: "font:," + c_METONYM_ICONS_FONT_SOURCE
     }
 }

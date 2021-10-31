@@ -31,6 +31,7 @@ QtObject {
     required property string warningTriangle
     required property string warningCircle
     required property string consolePrompt
+    required property string canonicPlayground
 
     // required property string caret_down
     // required property string caret_up
